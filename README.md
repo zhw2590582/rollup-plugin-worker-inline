@@ -17,7 +17,7 @@ $ npm install rollup-plugin-worker-inline
 In the `rollup.config.js`, or you can test the sample file [./sample/rollup.config.js](./sample/rollup.config.js)
 
 ```js
-import workerInline from '../src/index';
+import workerInline from 'rollup-plugin-worker-inline';
 
 export default {
     // ...
