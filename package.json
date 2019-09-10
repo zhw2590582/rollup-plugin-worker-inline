@@ -1,0 +1,27 @@
+{
+    "name": "rollup-plugin-worker-inline",
+    "version": "1.1.1",
+    "description": "rollup-plugin-worker-inline",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "npx eslint src"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zhw2590582/rollup-plugin-worker-inline.git"
+    },
+    "keywords": [],
+    "author": "Harvey Zack <laozhaochaguan@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/zhw2590582/rollup-plugin-worker-inline/issues"
+    },
+    "homepage": "https://github.com/zhw2590582/rollup-plugin-worker-inline#readme",
+    "devDependencies": {
+        "babel-eslint": "^10.0.3",
+        "eslint": "^6.3.0",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-config-prettier": "^6.2.0",
+        "eslint-plugin-import": "^2.18.2"
+    }
+}
