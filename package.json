@@ -4,7 +4,7 @@
     "description": "rollup-plugin-worker-inline",
     "main": "src/index.js",
     "scripts": {
-        "test": "npx eslint src"
+        "lint": "npx eslint src"
     },
     "repository": {
         "type": "git",
