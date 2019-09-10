@@ -6,12 +6,10 @@ const babel = require('@babel/core');
 module.exports = function rollupPluginWorkerInline(configInput = {}) {
     const config = {
         workerRegexp: /new Worker\((["'])(.+?)\1\)/g,
-        workerTransform: workerString => {
-            const { code } = babel.transformSync(workerString, {
-                presets: ['@babel/preset-env', 'minify'],
-            });
-            return `(function(){${code}}).toString().slice(11, -2)`;
-        },
+        workerTransform: workerString =>
+            babel.transformSync(workerString, {
+                presets: ['@babel/preset-env'],
+            }).code,
         ...configInput,
     };
 
@@ -35,7 +33,7 @@ module.exports = function rollupPluginWorkerInline(configInput = {}) {
                     ms.overwrite(
                         workerFileStartIndex,
                         workerFileEndIndex,
-                        `URL.createObjectURL(new Blob([${workerTransformString}]))`,
+                        `URL.createObjectURL(new Blob([\`${workerTransformString}\`]))`,
                     );
                 } else {
                     break;
@@ -48,4 +46,4 @@ module.exports = function rollupPluginWorkerInline(configInput = {}) {
             };
         },
     };
-}
+};
