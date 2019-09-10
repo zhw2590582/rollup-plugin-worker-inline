@@ -4,7 +4,7 @@
 ![license](https://badgen.net/npm/license/rollup-plugin-worker-inline)
 [![npm Downloads](https://img.shields.io/npm/dt/rollup-plugin-worker-inline.svg)](https://www.npmjs.com/package/rollup-plugin-worker-inline)
 
-> A simple rollup plugin to create inline workers with Blob
+> A simple rollup plugin to create inline worker
 
 ## Install
 
