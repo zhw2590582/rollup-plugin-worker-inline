@@ -1,13 +1,11 @@
-import workerInline from '../src/index';
+const workerInline = require('../src/index');
 
-export default {
+module.exports = {
     input: 'index.js',
     output: {
         format: 'iife',
         file: 'bundle.js',
         sourcemap: true,
     },
-    plugins: [
-        workerInline(),
-    ],
+    plugins: [workerInline()],
 };

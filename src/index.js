@@ -3,7 +3,7 @@ const { resolve, dirname } = require('path');
 const MagicString = require('magic-string');
 const babel = require('@babel/core');
 
-export default function rollupPluginWorkerInline(configInput = {}) {
+module.exports = function rollupPluginWorkerInline(configInput = {}) {
     const config = {
         workerRegexp: /new Worker\((["'])(.+?)\1\)/g,
         workerTransform: workerString => {
