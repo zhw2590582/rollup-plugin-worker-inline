@@ -1,6 +1,6 @@
 {
     "name": "rollup-plugin-worker-inline",
-    "version": "1.1.1",
+    "version": "1.0.0",
     "description": "rollup-plugin-worker-inline",
     "main": "src/index.js",
     "scripts": {
@@ -23,5 +23,11 @@
         "eslint-config-airbnb-base": "^14.0.0",
         "eslint-config-prettier": "^6.2.0",
         "eslint-plugin-import": "^2.18.2"
+    },
+    "dependencies": {
+        "@babel/core": "latest",
+        "@babel/preset-env": "latest",
+        "babel-preset-minify": "latest",
+        "magic-string": "latest"
     }
 }

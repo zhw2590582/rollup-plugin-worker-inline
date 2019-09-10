@@ -8,7 +8,10 @@
         "browser": true,
         "es6": true
     },
-    "rules": {},
+    "rules": {
+        "consistent-return": 0,
+        "no-constant-condition": 0
+    },
     "parserOptions": {
         "sourceType": "module"
     }
