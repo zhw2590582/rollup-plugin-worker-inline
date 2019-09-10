@@ -8,7 +8,7 @@ module.exports = function rollupPluginWorkerInline(configInput = {}) {
         workerRegexp: /new Worker\((["'])(.+?)\1\)/g,
         workerTransform: workerString =>
             babel.transformSync(workerString, {
-                presets: ['@babel/preset-env'],
+                presets: ['@babel/preset-env', 'minify'],
             }).code,
         ...configInput,
     };
@@ -27,6 +27,7 @@ module.exports = function rollupPluginWorkerInline(configInput = {}) {
                     const workerFile = match[2];
                     const workerPath = resolve(dirname(id), workerFile);
                     const workerString = readFileSync(workerPath, 'utf8');
+                    this.addWatchFile(workerPath);
                     const workerTransformString = config.workerTransform(workerString) || '';
                     const workerFileStartIndex = match.index + 'new Worker('.length;
                     const workerFileEndIndex = match.index + match[0].length - ')'.length;

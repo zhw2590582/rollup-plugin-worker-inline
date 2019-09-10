@@ -2,6 +2,7 @@
   "name": "sample",
   "version": "1.0.0",
   "scripts": {
+    "dev": "npx rollup -c -w",
     "build": "npx rollup -c"
   },
   "devDependencies": {
