@@ -4,8 +4,10 @@ const MagicString = require('magic-string');
 const babel = require('@babel/core');
 
 module.exports = function rollupPluginWorkerInline(configInput = {}) {
+    const workerRegexp = /new Worker\((["'])(.+?)\1\)/g;
+    const importScriptRegexp = /importScript\((["'])(.+?)\1\)/g;
+
     const config = {
-        workerRegexp: /new Worker\((["'])(.+?)\1\)/g,
         workerTransform: workerString =>
             babel.transformSync(workerString, {
                 presets: ['@babel/preset-env', 'minify'],
@@ -16,7 +18,6 @@ module.exports = function rollupPluginWorkerInline(configInput = {}) {
     return {
         name: 'rollup-plugin-worker-inline',
         transform(code, id) {
-            const workerRegexp = new RegExp(config.workerRegexp.source, config.workerRegexp.flags);
             if (!workerRegexp.test(code)) return;
             const ms = new MagicString(code);
             workerRegexp.lastIndex = 0;
