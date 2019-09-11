@@ -23,12 +23,9 @@ export default {
     // ...
     plugins: [
         workerInline({
-            // Get the regularity of the worker path, best not to modify
-            workerRegexp: /new Worker\((["'])(.+?)\1\)/g,
-
             // The worker file passes `@babel/preset-env` and `babel-preset-minify` presets processing by default.
             // Or you can customize the worker output yourself.
-            workerTransform: workerString => workerString,
+            transform: code => code,
         }),
     ],
     // ...
