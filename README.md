@@ -6,6 +6,8 @@
 
 > A simple rollup plugin to create inline worker
 
+Temporarily does not support packaging of `importScripts`, `import` and `require` modules.
+
 ## Install
 
 ```bash
