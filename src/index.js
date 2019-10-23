@@ -5,7 +5,15 @@ const babel = require('@babel/core');
 
 function babelTransform(code) {
     return babel.transformSync(code, {
-        presets: ['@babel/preset-env', 'minify'],
+        presets: [
+            '@babel/preset-env',
+            [
+                'minify',
+                {
+                    builtIns: false,
+                },
+            ],
+        ],
     }).code;
 }
 
